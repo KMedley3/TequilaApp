@@ -1,0 +1,72 @@
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <fieldset id="first_name-field">
+            {{ form.first_name.label }}
+            {% if form.first_name.errors %}
+                
+                {{ form.first_name(class = 'form-control is-invalid', placeholder = 'Insert first name here ') }}
+                <div class="invalid-feedback">
+                    {% for error in form.first_name.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.first_name(class = 'form-control', placeholder = 'Insert first name here ') }}
+            {% endif %}
+
+            
+        </fieldset>
+    </div>
+    <div class="form-group">
+        <fieldset id="last_name-field">
+            {{ form.last_name.label }}
+            {% if form.last_name.errors %}
+                
+                {{ form.last_name(class = 'form-control is-invalid', placeholder = 'Insert last name here ') }}
+                <div class="invalid-feedback">
+                    {% for error in form.last_name.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.last_name(class = 'form-control', placeholder = 'Insert last name here ') }}
+            {% endif %}
+        </fieldset>
+    </div>
+    <div class="form-group">
+        <fieldset id="first_name-field">
+            {{ form.email.label }}
+            {% if form.email.errors %}
+                
+                {{ form.email(class = 'form-control is-invalid', placeholder = 'Insert email name here ') }}
+                <div class="invalid-feedback">
+                    {% for error in form.email.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.email(class = 'form-control', placeholder = 'Insert email here ') }}
+            {% endif %}
+        </fieldset>
+    </div>
+    <div class="form-group">
+        <fieldset id="pass-field">
+            {{ form.password.label }}
+            {% if form.password.errors %}
+                
+                {{ form.password(class = 'form-control is-invalid', placeholder = 'Insert password here ') }}
+                <div class="invalid-feedback">
+                    {% for error in form.password.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.password(class = 'form-control', placeholder = 'Insert password here ') }}
+            {% endif %}
+        </fieldset>
+    </div>
+        <!-- Submit button area -->
+        {{ form.submit_button(class = "btn btn-primary btn-block mt-2")}}
+
+</form>
