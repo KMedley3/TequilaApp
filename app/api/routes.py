@@ -39,7 +39,9 @@ def get_drink(current_user_token):
 @token_required
 def update_drink(current_user_token,id):
     drink = Drink.query.get(id) 
+    print(drink)
     drink.name = request.json['name']
+    print(drink.name, request.json['name'])
     drink.alc_percentage = request.json['alc_percentage']
     drink.origin = request.json['origin']
     drink.tequila_type = request.json['tequila_type']
